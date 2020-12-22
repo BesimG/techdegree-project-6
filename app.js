@@ -2,6 +2,7 @@ const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 let missed = 0;
 const btn_reset = document.querySelector('.btn__reset');
+const button = document.getElementsByTagName('button');
 
 const phrases = [
     "Mercury",
@@ -22,17 +23,20 @@ function getRandomPhraseAsArray(arr){
     return arr[RandomArr];
 };
 
-// console.log(phrases[getRandomPhraseAsArray]);
-console.log(getRandomPhraseAsArray(phrases));
-// getRandomPhraseAsArray(phrases[RandomArrlength]);
+// console.log(getRandomPhraseAsArray(phrases));
 
 function checkLetter(clicked) {
 const lis = document.getElementsByTagName('li');
 
-if (clicked == li) {
-   for(let i = 0; i < lis.length; i ++)
-   let lis[i] = li;
-   (null);
-};
+    let match = null;
+    for(let i = 0; i < lis.length; i ++){
+    // let lis[i] = li;
+    
+        if(li.textcontent == button){
+            li.classList.add('show');
+            let match = button.textcontent;
+            return match;
+        };
+    };
 
 };
