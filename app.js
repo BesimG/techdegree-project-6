@@ -25,18 +25,21 @@ function getRandomPhraseAsArray(arr){
 
 // console.log(getRandomPhraseAsArray(phrases));
 
-function checkLetter(clicked) {
+function checkLetter(button) {
 const lis = document.getElementsByTagName('li');
 
     let match = null;
     for(let i = 0; i < lis.length; i ++){
-    // let lis[i] = li;
     
         if(li.textcontent == button){
             li.classList.add('show');
-            let match = button.textcontent;
+            match = button.textcontent;
             return match;
         };
     };
 
 };
+
+qwerty.addEventListener("click", () => {
+
+});
