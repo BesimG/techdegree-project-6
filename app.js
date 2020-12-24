@@ -23,7 +23,7 @@ function getRandomPhraseAsArray(arr){
     return arr[RandomArr];
 };
 
-// console.log(getRandomPhraseAsArray(phrases));
+getRandomPhraseAsArray(phrases);
 
 function checkLetter(button) {
 const lis = document.getElementsByTagName('li');
@@ -40,6 +40,15 @@ const lis = document.getElementsByTagName('li');
 
 };
 
-qwerty.addEventListener("click", () => {
+function addPhraseToDisplay(arr){
+    for(let i = 0; i < phrases.length; i ++) {
+        for(let i = 0; i < phrases.indexOf; i ++) {
+            arrItemsList = "";
+        };
+    };
+};
+
+qwerty.addEventListener("click", (e) => {
+    e.target.TagName == button;
 
 });
