@@ -27,9 +27,9 @@ function addPhraseToDisplay(arr){
     for(let i = 0; i < arr.length; i ++){
         let li = document.createElement('li');
         li.textContent = arr[i];
-        let ul = document.getElementsByTagName('ul');
+        let ul = document.getElementsByTagName('ul')[0];
         ul.appendChild(li);
-        if () {
+        if (arr[i] != ' ') {
             li.className = 'letter';
         } else {
             li.className = 'space';
@@ -38,16 +38,19 @@ function addPhraseToDisplay(arr){
 
 };
 
-function checkLetter(button) {
-const lis = document.getElementsByTagName('li');
+const myRandomPhrase = getRandomPhraseAsArray(phrases)
+addPhraseToDisplay(myRandomPhrase);
 
+function checkLetter(btn){
+    let lis = document.querySelectorAll('li');
     let match = null;
-    for(let i = 0; i < lis.length; i ++){
-        if(li.textcontent == button){
-            li.classList.add('show');
-            match = button.textcontent;
-            return match;
-        };
-    };
+    for(let i = 0; i < lis.length; i ++)
+    {
+       if(btn.textContent = lis[i]){
+           li.className = 'show';
+       } else {
+           btn.textContent = match;
+       }
+    }
+    return match;
 };
-
