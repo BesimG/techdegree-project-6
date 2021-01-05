@@ -23,32 +23,31 @@ function getRandomPhraseAsArray(arr){
     return arr[RandomArr];
 };
 
-getRandomPhraseAsArray(phrases);
+function addPhraseToDisplay(arr){
+    for(let i = 0; i < arr.length; i ++){
+        let li = document.createElement('li');
+        li.textContent = arr[i];
+        let ul = document.getElementsByTagName('ul');
+        ul.appendChild(li);
+        if () {
+            li.className = 'letter';
+        } else {
+            li.className = 'space';
+        } 
+    }
+
+};
 
 function checkLetter(button) {
 const lis = document.getElementsByTagName('li');
 
     let match = null;
     for(let i = 0; i < lis.length; i ++){
-    
         if(li.textcontent == button){
             li.classList.add('show');
             match = button.textcontent;
             return match;
         };
     };
-
 };
 
-function addPhraseToDisplay(arr){
-    for(let i = 0; i < phrases.length; i ++) {
-        for(let i = 0; i < phrases.indexOf; i ++) {
-            arrItemsList = "";
-        };
-    };
-};
-
-qwerty.addEventListener("click", (e) => {
-    e.target.TagName == button;
-
-});
