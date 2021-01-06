@@ -35,22 +35,33 @@ function addPhraseToDisplay(arr){
             li.className = 'space';
         } 
     }
-
 };
 
 const myRandomPhrase = getRandomPhraseAsArray(phrases)
-addPhraseToDisplay(myRandomPhrase);
+// addPhraseToDisplay(myRandomPhrase);
+addPhraseToDisplay(myRandomPhrase.toLowerCase());
 
 function checkLetter(btn){
     let lis = document.querySelectorAll('li');
     let match = null;
     for(let i = 0; i < lis.length; i ++)
     {
-       if(btn.textContent = lis[i]){
-           li.className = 'show';
+       if(btn == lis[i].textContent){
+           lis.className = 'show';
        } else {
            btn.textContent = match;
        }
     }
     return match;
 };
+
+qwerty.addEventListener("click", () => {
+    if (qwerty == 'chosen') {
+        button = disabled;
+    } else {
+        button.className = 'chosen';
+    }
+});
+
+checkLetter(button);
+    
