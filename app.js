@@ -47,7 +47,7 @@ function checkLetter(btn){
     for(let i = 0; i < lis.length; i ++)
     {
        if(btn == lis[i].textContent){
-           lis.className = 'show';
+           lis.classList.add("show");
        } else {
            btn.textContent = match;
        }
@@ -55,13 +55,17 @@ function checkLetter(btn){
     return match;
 };
 
-qwerty.addEventListener("click", () => {
-    if (qwerty == 'chosen') {
-        button = disabled;
-    } else {
-        button.className = 'chosen';
+qwerty.addEventListener("click", (e) => {
+    if (e.target.tagName === "BUTTON") {
+            e.target.classList.add("chosen");
+            e.target.setAttribute("disabled" , " ");
+    }
+    const letterFound = checkLetter(e.target.textContent);
+    if (letterFound == null) {
+        ol.removeChild('li');
+        missed +=1;
     }
 });
 
-checkLetter(button);
-    
+
+
