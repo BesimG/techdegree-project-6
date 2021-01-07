@@ -47,7 +47,7 @@ function checkLetter(btn){
     for(let i = 0; i < lis.length; i ++)
     {
        if(btn == lis[i].textContent){
-           lis.classList.add("show");
+           lis[li].classList.add("show");
        } else {
            btn.textContent = match;
        }
@@ -60,13 +60,27 @@ qwerty.addEventListener("click", (e) => {
             e.target.classList.add("chosen");
             e.target.setAttribute("disabled" , " ");
     }
-    const letterFound = checkLetter(e.target.textContent);
-    if (letterFound == null) {
+    let btn = e.target.textContent;
+    const letterFound = checkLetter(btn);
+    checkLetter(btn);
+    
+    if (checkLetter != letterFound) {
+        ol = li.parentNode;
         ol.removeChild('li');
         missed +=1;
     }
+    checkWin();
 });
 
+function checkWin(){
+    let show = document.querySelector('.show');
+    let letters = document.querySelector('.letters');
+    if(show.value.length == letters.value.length){
+       overlay.textContent = win; 
+    } else if(misses >= 5){
+        overlay.textContent = lose;
+    }
+};
 
 
 
