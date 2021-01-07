@@ -41,18 +41,16 @@ const myRandomPhrase = getRandomPhraseAsArray(phrases)
 // addPhraseToDisplay(myRandomPhrase);
 addPhraseToDisplay(myRandomPhrase.toLowerCase());
 
-function checkLetter(btn){
+function checkLetter(btn) {
     let lis = document.querySelectorAll('li');
     let match = null;
-    for(let i = 0; i < lis.length; i ++)
-    {
-       if(btn == lis[i].textContent){
-           lis[li].classList.add("show");
-       } else {
-           btn.textContent = match;
-       }
+    for (let i = 0; i < lis.length; i++) {
+        if (btn == lis[i].textContent) {
+            lis[i].classList.add("show");
+            match = btn;
+        }
+        return match;
     }
-    return match;
 };
 
 qwerty.addEventListener("click", (e) => {
