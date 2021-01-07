@@ -60,23 +60,19 @@ qwerty.addEventListener("click", (e) => {
     }
     let btn = e.target.textContent;
     const letterFound = checkLetter(btn);
-    checkLetter(btn);
-    
     if (checkLetter != letterFound) {
-        ol = li.parentNode;
-        ol.removeChild('li');
         missed +=1;
     }
     checkWin();
 });
 
 function checkWin(){
-    let show = document.querySelector('.show');
-    let letters = document.querySelector('.letters');
-    if(show.value.length == letters.value.length){
-       overlay.textContent = win; 
-    } else if(misses >= 5){
-        overlay.textContent = lose;
+    let show = document.querySelectorAll('.show');
+    let letters = document.querySelectorAll('.letters');
+    if(show.length == letters.length){
+       overlay.textContent = "win"; 
+    } else if(missed >= 5){
+        overlay.textContent = "lose";
     }
 };
 
