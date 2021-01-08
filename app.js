@@ -61,6 +61,9 @@ qwerty.addEventListener("click", (e) => {
     let btn = e.target.textContent;
     const letterFound = checkLetter(btn);
     if (checkLetter != letterFound) {
+        const heartImage = document.querySelectorAll('.tries img')
+        const source = "images/lostHeart.png";
+        heartImage[missed].src = source; 
         missed +=1;
     }
     checkWin();
