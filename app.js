@@ -63,7 +63,8 @@ qwerty.addEventListener("click", (e) => {
         if (btn != letterFound) {
             const heartImage = document.querySelectorAll('.tries img')
             const source = "images/lostHeart.png";
-            heartImage[missed].src = source; 
+            heartImage[missed].src = source;
+            missed +=1; 
         }
     }
     checkWin();
@@ -84,7 +85,7 @@ function checkWin() {
       title.textContent = 'lose';
       overlay.style.display = 'flex';
     }
-  }}
+  };
 
 
 
