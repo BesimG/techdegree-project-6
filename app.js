@@ -55,29 +55,36 @@ function checkLetter(btn) {
 
 qwerty.addEventListener("click", (e) => {
     if (e.target.tagName === "BUTTON") {
-            e.target.classList.add("chosen");
-            e.target.setAttribute("disabled" , " ");
-    }
-    let btn = e.target.textContent;
-    const letterFound = checkLetter(btn);
-    if (checkLetter == letterFound) {
-        const heartImage = document.querySelectorAll('.tries img')
-        const source = "images/lostHeart.png";
-        heartImage[missed].src = source; 
-        missed +=1;
+        e.target.classList.add("chosen");
+        e.target.setAttribute("disabled" , " ");
+        let btn = e.target.textContent;
+        const letterFound = checkLetter(btn);
+        
+        if (btn != letterFound) {
+            const heartImage = document.querySelectorAll('.tries img')
+            const source = "images/lostHeart.png";
+            heartImage[missed].src = source; 
+        }
     }
     checkWin();
 });
 
-function checkWin(){
+function checkWin() {
     let show = document.querySelectorAll('.show');
-    let letters = document.querySelectorAll('.letters');
-    if(show.length == letters.length){
-       overlay.textContent = "win"; 
-    } else if(missed >= 5){
-        overlay.textContent = "lose";
+    let letters = document.querySelectorAll('.letter');
+    let title = overlay.querySelector('.title');
+    if (show.length == letters.length) {
+      btn_reset.style.display = 'none';
+      overlay.className = 'win';
+      title.textContent = 'win';
+      overlay.style.display = 'flex';
+    } else if (missed >= 5) {
+      btn_reset.style.display = 'none';
+      overlay.className = 'lose';
+      title.textContent = 'lose';
+      overlay.style.display = 'flex';
     }
-};
+  }}
 
 
 
