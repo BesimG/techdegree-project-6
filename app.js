@@ -49,8 +49,8 @@ function checkLetter(btn) {
             lis[i].classList.add("show");
             match = btn;
         }
-        return match;
     }
+    return match;
 };
 
 qwerty.addEventListener("click", (e) => {
